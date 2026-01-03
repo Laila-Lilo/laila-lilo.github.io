@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lolo Games</title>
+  <meta charset="UTF-8">
+  <title>Lightning Games ⚡</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+background: linear-gradient(135deg, #1f0036, #0f52ba);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    #searchBar {
+      padding: 12px;
+      width: 260px;
+      border-radius: 10px;
+      border: none;
+      margin: 20px auto;
+      font-size: 16px;
+      display: block;
+    }
+
+    .game {
+      background: #111;
+      border-radius: 15px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .game a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #1e90ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .game a:hover {
+      background: #63b3ff;
+    }
+  </style>
 </head>
-<body style="background-color: lavender; text-align: center;">
-  <h1>Hello! 💜</h1>
-  <p>Lolo Games</p>
+
+<body>
+
+<h1>⚡ Lightning Games ⚡</h1>
+
+<input id="searchBar" type="text" placeholder="Search games...">
+
+<p>Welcome! Choose a game below:</p>
+
+<div class="game"><h2>Snake</h2><a href="snake.html">Play Now</a></div>
+<div class="game"><h2>Tetris</h2><a href="tetris.html">Play Now</a></div>
+<div class="game"><h2>Pac-Man</h2><a href="https://pacman.live/" target="_blank">Play Now</a></div>
+<div class="game"><h2>Flappy Bird</h2><a href="https://flappybird.io/" target="_blank">Play Now</a></div>
+<div class="game"><h2>2048</h2><a href="https://play2048.co/" target="_blank">Play Now</a></div>
+  <div class="game">
+  <h2>Breakout</h2>
+  <a href="https://classicreload.com/atari-breakout.html" target="_blank">
+    Play Now
+  </a>
+</div>
+<div class="game"><h2>Maze Game</h2><a href="https://www.coolmathgames.com/0-maze" target="_blank">Play Now</a></div>
+<div class="game"><h2>Krunker</h2><a href="https://krunker.io/" target="_blank">Play Now</a></div>
+
+<script>
+const searchBar = document.getElementById("searchBar");
+const games = document.querySelectorAll(".game");
+
+searchBar.addEventListener("input", () => {
+  const value = searchBar.value.toLowerCase();
+  games.forEach(game => {
+    game.style.display = game.innerText.toLowerCase().includes(value)
+      ? "block"
+      : "none";
+  });
+});
+</script>
+
 </body>
 </html>
-
